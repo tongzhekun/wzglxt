@@ -315,7 +315,6 @@ export default {
       cb(this.customArray)
     },
     handleSelect(item) {
-      console.log('999999999999988888888')
       this.form.custom_name = item.custom_name
       this.form.operator_name = item.operator_name
       this.form.custom_license = item.custom_license
@@ -363,7 +362,6 @@ export default {
       cb(this.wzArray)
     },
     async handleSelect1(item) {
-      console.log('111111111111')
       this.form.material_name = item.material_name
       this.form.consumable = item.consumable
       this.form.material_code = item.material_code
@@ -373,7 +371,6 @@ export default {
         inst_code: this.form.inst_code,
         material_code: this.form.material_code
       })
-      console.log(responseResult.data.data, '.delayTyp')
       this.delayType = responseResult.data.data[0].delayType
       this.$forceUpdate()
     },

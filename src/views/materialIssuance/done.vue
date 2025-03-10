@@ -113,7 +113,6 @@ export default {
     this.userId = loginInfo.userId
     this.form.user_id = loginInfo.userId
     this.searchClick()
-    console.log(this.form.loanData, '0000000000000')
   },
   activated() {
     this.searchClick()
@@ -121,7 +120,6 @@ export default {
   },
   methods: {
     rowClick(row) {
-      console.log(row.busi_id, 'row.busi_id')
       this.$router.push(row.url + '?busi_id=' + row.busi_id)
     },
     async fetchData() {
@@ -173,8 +171,6 @@ export default {
       this.form.loanData.sort((a, b) => {
         return new Date(b.time).getTime() - new Date(a.time).getTime()
       })
-
-      console.log(this.form.loanData, 'this.form.loanData')
     },
     async searchClick() {
       this.currentPage = 1

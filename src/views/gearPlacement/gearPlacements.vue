@@ -326,8 +326,6 @@ export default {
             allocations: CDByIdArray[i].allocations
           })
         }
-
-        console.log('wqeeqwq', CDByIdArray)
       } else {
         this.$message.error(responseCDById.data.data.message)
       }
@@ -504,7 +502,6 @@ export default {
           this.serialId = jsonDataTobacco[1][9]
           const serialId = this.serialId.toString()
           this.serialIdNew = this.serialId.toString()
-          console.log('this.serialId', serialId)
           const dateResult = this.getWeekRangeFromString(serialId)
           const periodValue = dateResult.monday + '至' + dateResult.sunday + '卷烟拟合数据'
           this.period = {
@@ -732,7 +729,6 @@ export default {
             this.serialIdNew = periodArray.reduce((max, current) => {
               return parseInt(current.serialId) > parseInt(max.serialId) ? current : max
             }).serialId
-            console.log('qeqwe', this.serialIdNew)
           } else {
             this.$message.error(responsePeriod.data.data.message)
           }
@@ -862,7 +858,6 @@ export default {
             distributions: this.newAllocationResults
           }
           const responseCaculation = await saveCalculateDistribution(payloadCaculation)
-          console.log('数据', responseCaculation.data)
           if (responseCaculation.data.code == 200) {
             this.$message.success('数据加载成功！')
           } else {

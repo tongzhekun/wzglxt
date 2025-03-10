@@ -313,7 +313,6 @@ export default {
       })
     },
     handleRemove(file, uploadFiles) {
-      console.log(file, 'foelsss')
       axios
         .post(import.meta.env.VITE_API_BASE_PATH + '/uploads/delete.php', {
           filePath: file.response.file // 假设 file.url 是文件的完整路径,

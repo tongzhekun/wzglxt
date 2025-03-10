@@ -278,7 +278,6 @@ export default {
     this.form.loanData = responseDemand.data.data
     this.form.user_id = responseDemand.data.data[0].user_id
     //发起人信息
-    console.log(this.form.user_id, this.user_id, 'this.user_id')
     const response = await userMessage({ userId: this.form.user_id })
     this.form.user_name = response.data.data[0].employee_name
     this.form.inst_code = response.data.data[0].inst_code
@@ -345,7 +344,6 @@ export default {
         this.buttonShow = true
       }
     }
-    console.log(this.currentType, 'this.currentTypethis.currentType')
   },
   methods: {
     backfirstClick() {
@@ -539,12 +537,6 @@ export default {
       })
       setTimeout(async () => {
         if (validatestat) {
-          console.log(
-            this.flow_node,
-            this.flow_node_max,
-            Number(this.flow_node) === this.flow_node_max,
-            'this.flow_node2'
-          )
           if (Number(this.flow_node) === this.flow_node_max) {
             this.confirmApprovalClick()
           } else {

@@ -39,7 +39,6 @@ const fetchDetailUserApi = async () => {
     result.age = response.data.data[0].age
     result.roleList = response.data.data.map((item) => item.role_name)
   }
-  console.log(result, 'resultresultresultresultresult')
   // 这里可以调用接口获取用户信息
   // const data = {
   //   id: 1,

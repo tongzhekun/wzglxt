@@ -327,9 +327,7 @@ export default {
   async created() {
     const responseJudge = await judgeDemandTime({ name: 'demand' }) // 调用 upload 函数并传入 payload
     this.judgeType = responseJudge.data.data
-    console.log(this.judgeType, 'this.judgeType')
     this.busi_id = this.$route.query.busi_id
-    console.log(this.busi_id, 'asdasds')
     if (this.busi_id != undefined && this.busi_id != '') {
       const responseDemand = await searchDemand({ busi_id: this.busi_id })
       this.form.loanData = responseDemand.data.data
@@ -401,7 +399,6 @@ export default {
       this.$forceUpdate()
     },
     async submitClick() {
-      console.log(this.form.loanData, 'this.form.loanData')
       if (this.form.loanData === null || this.form.loanData.length === 0) {
         this.$message.warning('请先新增物料需求表数据')
       } else {

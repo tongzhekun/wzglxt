@@ -408,7 +408,6 @@ export default {
         this.buttonShow = true
       }
     }
-    console.log(this.currentType, 'this.currentTypethis.currentType')
   },
   methods: {
     backfirstClick() {
@@ -587,7 +586,6 @@ export default {
               next_approval_name: this.form.next_approval_name,
               busi_id: this.busi_id
             })
-            console.log(responseResult.data.code, responseResult.data.code === 300, '8888')
             if (responseResult.data.code === 300) {
               this.$message.error(responseResult.data.message)
             } else {
@@ -613,12 +611,6 @@ export default {
       })
       setTimeout(async () => {
         if (validatestat) {
-          console.log(
-            this.flow_node,
-            this.flow_node_max,
-            Number(this.flow_node) === this.flow_node_max,
-            'this.flow_node2'
-          )
           if (Number(this.flow_node) === this.flow_node_max) {
             this.confirmApprovalClick()
           } else {

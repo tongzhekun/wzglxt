@@ -62,9 +62,7 @@ const loadAll = () => {
     { value: 'babel', link: 'https://github.com/babel/babel' }
   ]
 }
-const handleSelect = (item: Recordable) => {
-  console.log(item)
-}
+const handleSelect = () => {}
 onMounted(() => {
   restaurants.value = loadAll()
 })
@@ -1686,12 +1684,8 @@ const schema = reactive<FormSchema[]>([
         }
       ],
       multiple: true,
-      onPreview: (uploadFile) => {
-        console.log(uploadFile)
-      },
-      onRemove: (file) => {
-        console.log(file)
-      },
+      onPreview: () => {},
+      onRemove: () => {},
       beforeRemove: (uploadFile) => {
         return ElMessageBox.confirm(`Cancel the transfer of ${uploadFile.name} ?`).then(
           () => true,

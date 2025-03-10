@@ -187,7 +187,6 @@ export default {
   },
   async created() {
     this.busi_id = this.$route.query.busi_id
-    console.log(this.busi_id, 'asdasds')
     if (this.busi_id != undefined && this.busi_id != '') {
       const responseDemand = await searchDemandApplyTotal({ busi_id: this.busi_id })
       this.form.loanData = responseDemand.data.data
@@ -213,9 +212,7 @@ export default {
     this.flow_no = '5'
   },
   methods: {
-    yearChange() {
-      console.log(this.form.year, 'yearChange')
-    },
+    yearChange() {},
     async searchClick() {
       let validatestat = false
       this.$refs['formRef'].validate((valid) => {
@@ -295,7 +292,6 @@ export default {
       this.$forceUpdate()
     },
     async submitClick() {
-      console.log(this.form.loanData, 'this.form.loanData')
       if (this.form.loanData === null || this.form.loanData.length === 0) {
         this.$message.warning('请先查询要提交的物料需求表数据')
       } else {

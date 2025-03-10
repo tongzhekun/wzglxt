@@ -239,9 +239,7 @@ const signIn = async () => {
       try {
         // 请求接口register
         const res = await loginApi(formData)
-        console.log(res, res.data.code, res.data.code === 200, '4444444444')
         if (res.data.code === 200) {
-          console.log('6666666666')
           // 是否记住我
           // if (unref(remember)) {
           userStore.setLoginInfo({
@@ -253,16 +251,11 @@ const signIn = async () => {
           //   userStore.setLoginInfo(undefined)
           // }
           userStore.setRememberMe(unref(remember))
-          console.log(
-            res.data.data,
-            'res.data.datares.data.datares.data.datares.data.datares.data.data'
-          )
           userStore.setUserInfo(res.data.data)
           // 是否使用动态路由
           if (appStore.getDynamicRouter) {
             getRole()
           } else {
-            console.log('`````')
             await permissionStore.generateRoutes('static').catch(() => {})
             permissionStore.getAddRouters.forEach((route) => {
               addRoute(route as RouteRecordRaw) // 动态添加可访问路由表

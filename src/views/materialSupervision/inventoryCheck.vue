@@ -404,7 +404,6 @@ export default {
             Math.sin(dLon / 2)
         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
         const distance = R * c
-        console.log(distance, '1111111111')
         if (distance > 100) {
           this.form.is_normal = '1'
         } else {
@@ -413,7 +412,6 @@ export default {
       }
     },
     handleRemove(file, uploadFiles) {
-      console.log(file, 'foelsss')
       axios
         .post(import.meta.env.VITE_API_BASE_PATH + '/uploads/delete.php', {
           filePath: file.response.file // 假设 file.url 是文件的完整路径,

@@ -204,7 +204,6 @@ export default {
         this.$message.error(response.data.data.message)
       }
     }
-    console.log(this.form.loanData, '0000000000000')
   },
   activated() {
     this.searchClick()
@@ -212,11 +211,9 @@ export default {
   },
   methods: {
     rowClick(row) {
-      console.log(row.busi_id, 'row.busi_id')
       this.$router.push(row.url + '?busi_id=' + row.busi_id)
     },
     async fetchData() {
-      console.log(this.form.loanData, '11111111111')
       const responseTodo = await searchTodo({
         user_id: this.userId,
         page: this.currentPage,
@@ -306,7 +303,6 @@ export default {
       this.form.loanData.sort((a, b) => {
         return new Date(b.time).getTime() - new Date(a.time).getTime()
       })
-      console.log(this.form.loanData, 'this.form.loanData')
     },
     async searchClick() {
       this.currentPage = 1

@@ -231,7 +231,6 @@ export default {
       this.form.procurement_time = this.form.procurement_time1.getFullYear()
     },
     async searchClick() {
-      console.log('1111')
       let validatestat = false
       this.$refs['formRef'].validate((valid) => {
         if (valid) {
@@ -242,7 +241,6 @@ export default {
       })
       setTimeout(async () => {
         if (validatestat) {
-          console.log(this.level, this.level === '1', '2222')
           if (this.level === '0') {
             this.loading = true
             const payload = {
@@ -251,7 +249,6 @@ export default {
               user_id: this.form.user_id,
               role: this.role
             }
-            console.log('3333')
             const response = await searchReviewProcess(payload) // 调用 upload 函数并传入 payload
             if (response.data.code == 200) {
               this.form.loanData = response.data.data
@@ -261,7 +258,6 @@ export default {
             }
             this.loading = false
           } else if (this.level === '1') {
-            console.log('444')
             this.loading = true
             const payload = {
               procurement_time: this.form.procurement_time,

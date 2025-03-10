@@ -392,7 +392,6 @@ export default {
     this.form.telephone = responseCheck.data.data[0].telephone
     this.form.user_id = responseCheck.data.data[0].user_id
     this.form.user_name = responseCheck.data.data[0].user_name
-    console.log(this.materialNameString, 'this.materialNameStringthis.materialNameString')
     this.qrCodeString = responseCheck.data.data[0].qr_code_string
     if (this.materialCodeString.indexOf(',') > -1) {
       this.materialCodeArray = this.materialCodeString.split(',')
@@ -492,7 +491,6 @@ export default {
         this.buttonShow = true
       }
     }
-    console.log(this.currentType, 'this.currentTypethis.currentType')
   },
   methods: {
     async downloadFile(file) {
@@ -718,12 +716,6 @@ export default {
       })
       setTimeout(async () => {
         if (validatestat) {
-          console.log(
-            this.flow_node,
-            this.flow_node_max,
-            Number(this.flow_node) === this.flow_node_max,
-            'this.flow_node2'
-          )
           if (Number(this.flow_node) === this.flow_node_max) {
             this.confirmApprovalClick()
           } else {

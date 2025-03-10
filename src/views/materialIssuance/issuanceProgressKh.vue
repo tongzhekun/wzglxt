@@ -178,7 +178,6 @@ export default {
             }
             this.loading = false
           } else if (this.level === '1') {
-            console.log('444')
             this.loading = true
             const payload = {
               procurement_time: this.form.procurement_time,
